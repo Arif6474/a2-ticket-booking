@@ -17,7 +17,7 @@ function BookingForm() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    const bookingData = { from, to, date, guests, ticketclassName };
+    const bookingData = { id: Date.now(), from, to, date, guests, ticketclassName };
 
     if (bookedTickets.length < 3) {
       const result = dispatch(handleBookingAdd(bookingData));

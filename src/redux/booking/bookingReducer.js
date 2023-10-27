@@ -14,7 +14,7 @@ const bookingReducer = (state = initialState, action) => {
       return {
         ...state,
         bookedTickets: state.bookedTickets.filter(
-          (ticket, index) => index !== action.payload
+          (ticket) => ticket.id !== action.payload
         ),
       };
 

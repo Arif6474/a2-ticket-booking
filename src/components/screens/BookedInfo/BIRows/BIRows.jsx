@@ -2,11 +2,11 @@ import { useDispatch } from "react-redux";
 import { handleBookingDelete } from "../../../../redux/booking/actions";
 
 /* eslint-disable react/prop-types */
-function BIRows({item, index}) {
+function BIRows({item}) {
 
     const dispatch = useDispatch();
-    function handleDelete(i) {
-        dispatch(handleBookingDelete(i));
+    function handleDelete(id) {
+        dispatch(handleBookingDelete(id));
       }
 
   return (
@@ -30,7 +30,7 @@ function BIRows({item, index}) {
       </td>
       <td className="px-6 py-4 text-center">
         <div className="flex justify-center gap-4">
-          <button className="lws-remove" onClick={()=>handleDelete(index)}>
+          <button className="lws-remove" onClick={()=>handleDelete(item?.id)}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
